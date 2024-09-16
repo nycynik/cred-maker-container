@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: credzbuilder
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: credzbuilder
+  template:
+    metadata:
+      labels:
+        app: credzbuilder
+    spec:
+      containers:
+      - name: credzbuilder
+        image: nycynik/credzbuilder:latest
+        ports:
+        - containerPort: 80
