@@ -10,7 +10,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Clone the GitHub repository
-                git 'https://github.com/nycynik/cred-maker-container.git'
+                git branch: 'main', url: 'https://github.com/nycynik/cred-maker-container.git'
             }
         }
         stage('Build Docker Image') {
